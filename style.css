@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --foreground: #dedede;
+    --background: #2b2b2b;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    color: var(--foreground);
+    flex-direction: column;
+    place-items: center;
+    position: relative;
+}
+
+.content{
+    display: grid;
+    place-items: center;
+}
+
+.background-image{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: url(/public/img/background_image.jpg);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .85;
+    z-index: -99;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(43, 43, 43, .5);
+    padding: 2em;
+    font-size: 1.33rem;
+}
+
+nav > ul {
+    display: flex;
+    place-items: center;
+}
+
+nav > ul > li {
+    margin: 1em;
+    cursor: pointer;
+}
+
+.brand{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.nav-link{
+    transition: .75s;
+}
+
+.active{
+    transform: translateY(-.5em);
+    border-bottom: 5px solid var(--foreground);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1em;
+    margin: 2em;
+    background:rgba(0, 0, 0, .5);
+    padding: 4em;
+}
+
+.card > p {
+    font-size: 2rem;
+}
+
+.img-container{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.img-container > img{
+    width: max(100px, 300px);
+    height: max(100px, 300px);
+    border-radius: 50%;
+}
+
+footer{
+    display: flex;
+    place-items: center;
+    margin-top: auto;
+    color: var(--background);
+}
+
+footer > span > a > svg{
+    fill: var(--foreground);
+}
+
+@media (hover){
+    footer > span > a > svg{
+        fill: transparent;
+    }
+
+    footer > span > a > svg:hover{
+        fill: var(--foreground);
+    }
+}

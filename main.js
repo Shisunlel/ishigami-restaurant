@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=Array.from(document.querySelectorAll(".nav-link"));function t(){e.forEach((e=>e.classList.remove("active"))),this.classList.add("active"),"Home"===this.innerText?console.log("YOUR HOME"):"Menu"===this.innerText?console.log("YOUR MENU"):"Contact"!==this.innerText||console.log("YOUR contact")}e.forEach((e=>{e.addEventListener("click",t)}))})();
