@@ -1,4 +1,6 @@
-import { home, menu, contact } from "./modules";
+import home from "./home";
+import menu from './menu'
+import contact from './contact'
 
 const navLink = Array.from(document.querySelectorAll(".nav-link"));
 
@@ -17,3 +19,5 @@ function changeTab() {
 navLink.forEach((e) => {
   e.addEventListener("click", changeTab);
 });
+
+window.onload = home()

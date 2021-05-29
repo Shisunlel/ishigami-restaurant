@@ -1,13 +1,33 @@
-const home = () => {
-  console.log("YOUR HOME");
+const createTextElement = (el, text) => {
+  const element = document.createElement(el);
+  element.innerText = text;
+  return element;
 };
 
-const menu = () => {
-  console.log("YOUR MENU");
+const createImage = (src, alt) => {
+  const img = document.createElement("img");
+  img.src = `/public/img/${src.toLowerCase()}`;
+  img.alt = alt;
+  return img;
 };
 
-const contact = () => {
-  console.log("YOUR contact");
+const createDiv = () => {
+  const div = document.createElement("div");
+  return div;
 };
 
-export { home, menu, contact };
+const createMenuItem = (foodName, description, imageSrc, imageAlt, price) => {
+  const card = createDiv();
+  card.className = "card";
+  const p = createTextElement("p", foodName);
+  const em = createTextElement("em", description);
+  const img = createImage(imageSrc, imageAlt);
+  const divImage = createDiv();
+  divImage.className = "img-container menu";
+  divImage.append(img);
+  const anotherP = createTextElement("p", price);
+  card.append(p, em, divImage, anotherP);
+  return card;
+};
+
+export { createTextElement, createImage, createDiv, createMenuItem };
