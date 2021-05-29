@@ -6,7 +6,7 @@ const createTextElement = (el, text) => {
 
 const createImage = (src, alt) => {
   const img = document.createElement("img");
-  img.src = `/ishigami-restaurant/public/img/${src.toLowerCase()}`;
+  img.src = `public/img/${src.toLowerCase()}`;
   img.alt = alt;
   return img;
 };
